@@ -1,4 +1,4 @@
-defmodule AOC2020Test do
+defmodule AoC2020Test do
   use ExUnit.Case
-  doctest AOC2020
+  doctest AoC2020
 end

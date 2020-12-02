@@ -1,2 +1,2 @@
-defmodule AOC2020 do
+defmodule AoC2020 do
 end
