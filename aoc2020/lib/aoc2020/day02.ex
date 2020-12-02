@@ -8,6 +8,13 @@ defmodule AoC2020.Day02 do
     |> Enum.count(&(&1))
   end
 
+  def part2 do
+    read_input()
+    |> Enum.map(&extract_pattern/1)
+    |> Enum.map(&valid_presence?/1)
+    |> Enum.count(&(&1))
+  end
+
   defp read_input() do
     @input
     |> File.read!()
@@ -29,5 +36,11 @@ defmodule AoC2020.Day02 do
 
   defp between?(n, min, max) do
     n >= min and n <= max
+  end
+
+  defp valid_presence?({ p1, p2, char, passwd }) do
+    c1 = String.at(passwd, p1 - 1)
+    c2 = String.at(passwd, p2 - 1)
+    (c1 == char or c2 == char) and (c1 != c2)
   end
 end
